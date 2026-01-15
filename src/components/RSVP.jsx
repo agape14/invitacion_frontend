@@ -108,7 +108,7 @@ const RSVP = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl text-center mb-4 font-pacifico"
           style={{
-            background: 'linear-gradient(135deg, #F97316, #22C55E)',
+            background: 'linear-gradient(135deg, #FF69B4, #9370DB, #40E0D0)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
           }}

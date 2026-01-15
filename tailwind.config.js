@@ -18,6 +18,13 @@ export default {
         'rosado': '#FFB6C1',
         'safari-green': '#22C55E',
         'safari-orange': '#F97316',
+        // Nuevos colores extraídos de la imagen de referencia (Globos/Fiesta)
+        'fiesta-amarillo': '#FFC800', // Globo amarillo intenso
+        'fiesta-naranja': '#FF8C42',  // Globo naranja
+        'fiesta-rosa': '#FF69B4',     // Globo rosa/fucsia
+        'fiesta-morado': '#9370DB',   // Globo morado
+        'fiesta-azul': '#40E0D0',     // Globo turquesa/azul
+        'fiesta-verde': '#98FB98',    // Globo verde claro
       },
       fontFamily: {
         'quicksand': ['Quicksand', 'sans-serif'],

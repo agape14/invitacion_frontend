@@ -187,16 +187,24 @@ const SeccionInicio = () => {
               Te invitamos al
             </motion.span>
             <motion.h1
-              className="text-6xl md:text-8xl font-pacifico bg-gradient-to-r from-rosado via-purple-400 to-celeste bg-clip-text text-transparent drop-shadow-sm pb-2"
+              className="text-6xl md:text-8xl font-pacifico bg-gradient-to-r from-fiesta-rosa via-fiesta-morado to-fiesta-azul bg-clip-text text-transparent drop-shadow-sm pb-2"
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.6, type: 'spring' }}
             >
               1er Añito
             </motion.h1>
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mt-2 font-quicksand">
-              de Kailany
-            </h2>
+            <div className="mt-4 pb-2">
+              <span className="text-3xl md:text-4xl text-gray-400 font-quicksand block mb-1">de</span>
+              <motion.h2
+                className="text-7xl md:text-9xl font-pacifico bg-gradient-to-r from-fiesta-amarillo via-fiesta-naranja to-fiesta-rosa bg-clip-text text-transparent drop-shadow-lg p-2 pb-16"
+                initial={{ scale: 0.8, opacity: 0, rotate: -5 }}
+                animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                transition={{ delay: 0.8, type: "spring", bounce: 0.6 }}
+              >
+                Kailany
+              </motion.h2>
+            </div>
           </div>
 
           <div className="my-8 flex justify-center items-center">

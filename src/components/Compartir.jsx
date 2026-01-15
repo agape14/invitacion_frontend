@@ -45,7 +45,7 @@ ${url}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-gradient-to-br from-pastel-rosado to-pastel-crema rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden border-8 border-white"
+                    className="bg-gradient-to-br from-fiesta-naranja via-fiesta-rosa to-fiesta-morado rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden border-8 border-white"
                 >
                     {/* Background Decorations */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>

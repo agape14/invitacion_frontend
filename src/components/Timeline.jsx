@@ -89,7 +89,7 @@ const Timeline = () => {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl text-center mb-2 font-pacifico text-transparent bg-clip-text bg-gradient-to-r from-safari-orange via-yellow-500 to-safari-green drop-shadow-sm"
+            className="text-5xl md:text-6xl text-center mb-2 font-pacifico text-transparent bg-clip-text bg-gradient-to-r from-fiesta-naranja via-fiesta-amarillo to-fiesta-verde drop-shadow-sm"
           >
             Un Año de Aventuras
           </motion.h2>

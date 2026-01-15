@@ -19,6 +19,52 @@ const Ubicacion = () => {
     setIsAdmin(params.get('admin') === 'true');
   }, []);
 
+  // API configuration
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+
+  // Load settings from backend
+  useEffect(() => {
+    fetchSettings();
+  }, []);
+
+  const fetchSettings = async () => {
+    try {
+      const response = await fetch(`${API_URL}/settings`);
+      if (response.ok) {
+        const data = await response.json();
+        // Merge with defaults if some keys are missing
+        setInfo(prev => ({
+          ...prev,
+          ...data
+        }));
+      }
+    } catch (error) {
+      console.error("Error fetching settings:", error);
+    }
+  };
+
+  const saveSettings = async () => {
+    try {
+      const response = await fetch(`${API_URL}/settings`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(info),
+      });
+
+      if (response.ok) {
+        alert("¡Información actualizada correctamente!");
+        setIsEditing(false); // Close edit mode on success
+      } else {
+        alert("Error al guardar la información.");
+      }
+    } catch (error) {
+      console.error("Error saving settings:", error);
+      alert("Error de conexión al guardar.");
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setInfo(prev => ({
@@ -44,7 +90,7 @@ const Ubicacion = () => {
             ¡No faltes!
           </span>
           <h2 className="text-5xl md:text-6xl text-center mb-4 font-pacifico text-gray-800 drop-shadow-sm">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">¿Dónde</span> celebraremos?
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fiesta-azul to-fiesta-morado">¿Dónde</span> celebraremos?
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 font-quicksand max-w-2xl mx-auto">
             Ven a compartir este día especial en nuestra <br />
@@ -65,10 +111,10 @@ const Ubicacion = () => {
             {/* Admin Edit Button */}
             {isAdmin && (
               <button
-                onClick={() => setIsEditing(!isEditing)}
-                className="absolute top-4 right-4 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-black transition-colors z-20 text-xs font-bold"
+                onClick={() => isEditing ? saveSettings() : setIsEditing(true)}
+                className={`absolute top-4 right-4 text-white p-2 rounded-full shadow transition-colors z-20 text-xs font-bold ${isEditing ? 'bg-green-600 hover:bg-green-700' : 'bg-gray-800 hover:bg-black'}`}
               >
-                {isEditing ? 'Guardar (Vista)' : '✏️ Editar Info'}
+                {isEditing ? '💾 Guardar Cambios' : '✏️ Editar Info'}
               </button>
             )}
 
