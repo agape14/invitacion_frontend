@@ -4,8 +4,14 @@
 @tailwind utilities;
 
 @layer base {
+
+  html,
   body {
-    @apply bg-gradient-to-br from-pastel-crema via-pastel-celeste to-pastel-rosado min-h-screen;
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-pastel-crema via-pastel-celeste to-pastel-rosado min-h-screen overflow-x-hidden w-full;
     font-family: 'Quicksand', sans-serif;
   }
 

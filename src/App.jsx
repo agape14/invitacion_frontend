@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen scroll-smooth">
+    <div className="min-h-screen scroll-smooth overflow-x-hidden w-full relative">
       <Stepper currentSection={currentSection} onSectionChange={setCurrentSection} />
       <div className="pt-24">
         <SeccionInicio />
